@@ -1,26 +1,12 @@
-
-var opcion = "";
 $(document).ready(function(){
-$("#nombreCursos").css("display", "hidden");
+  
 
-    $.getJSON('../PHP/familias.php',optionFamilias);
-  //  $.getJSON('../PHP/cursos.php',optionCursos);
 
-function optionFamilias(familias){
-   for (var i=0; i< familias.length; i++){
-        opcion += "<option value =" + familias[i].id + ">" + familias[i].nom + "</option>";
-    }
-    $("#familias").html(opcion);
-};
+
+
+
 
 /*
-function optionCursos(){
-    var cursoSelected = $("#familias option:selected").val();
-    //console.log(cursoSelected);
-}*/
-
-
-
 
 
 function infoCursos(cursos){
@@ -75,5 +61,5 @@ function separarProfesiones(cursos){
     }
 }
 
-
+*/
 });

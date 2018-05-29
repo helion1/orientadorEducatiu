@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/funciones.js"></script>
+        <script src="js/jquery.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+
+        <title>Orientador Educatiu</title>
+    </head>
+    <body onload="javascript:cambiarPestanna(pestanas,pestana1);">
+      <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+      <!-- Menu principal -->
+    <nav  id="prueba" class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 <a class="navbar-brand" href="index.html">Buscar un altre curs</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#descripcio">Descripci&oacute;</a></li>
+                  <li><a href="#contingut">Contingut</a></li>
+                  <li><a href="#sortidaLaboral">Sortida laboral</a></li>
+                  <li><a href="#centres">Centress</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Contenedor Descripcion -->
+    <div id="descripcio" class="container-fluid bg-1">
+        <div class="container-fluid bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 id="nomEstudy"> Nombre Curso </h1>
+                        <h2 id="nomFamily"> Nombre familia </h2>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-6">
+                        <br>
+                        <p id="tipoEstudi">Ensenyament: Formacio professional </p>
+                        <p id="titol">Tecnic superior</p>
+                        <p id="nomFamily2">Familia: nombre familia</p>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <br>
+                        <img alt="imagen_tipo_familia" src="../IMG/img.jpg">
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>Qué es fa en aquest curs?</h2>
+                        <hr>
+                        <br>
+                        <p id="descripcion">Aquests estudis capaciten per organitzar,
+                            gestionar i controlar les operacions del transport de mercaderies
+                            i de viatgers en l'àmbit nacional i internacional, i per planificar
+                            i gestionar les activitats logístiques d'una empresa, d'acord amb la
+                            normativa vigent i els objectius establerts per la direcció de l'empresa,
+                            en el marc de la qualitat, seguretat i respecte pel medi ambient.</p>
+                        <p id="duracion">La duració del curs serà de: " + cursos.duracio + ". Una cinquena part \n\
+                            d'aquestes hores, es faran en centre de treball com a pràctiques.</p><p>El cost total del curs es de\n\
+                            " + cursos.preu + "€ aproximadament.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contenedor Contenido -->
+    <div id="contingut" class="container-fluid bg-1">
+        <div class="container-fluid bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2> Quines assignatures té? </h2>
+                        <hr>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                           Phasellus eget imperdiet turpis. Pellentesque non congue mi.
+                           Morbi volutpat sodales ante sollicitudin dictum. Nullam lorem lacus,
+                           tincidunt non mollis eu, condimentum rutrum risus. Praesent iaculis
+                           ipsum mauris, ac porttitor dui sagittis ut. Vestibulum ante ipsum primis
+                           in faucibus orci luctus et ultrices posuere cubilia Curae; Nam maximus
+                           massa a nisi placerat cursus. Nunc quam mi, vulputate a suscipit quis,
+                           iaculis a lectus.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-xs-5">
+                        <br>
+                        <img alt="imagen_tipo_familia" src="../IMG/img.jpg">
+                    </div>
+                    <div class="col-sm-7 col-xs-7">
+                        <br>
+                        <ul id="asignaturas">
+                            <li>Lista con nombres de asignaturas del curso.</li>
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contenedor Salida Laboral -->
+    <div id="sortidaLaboral" class="container-fluid bg-11">
+        <div class="container-fluid bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2> Quines sortides professionals tindré? </h2>
+                        <hr>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                           Phasellus eget imperdiet turpis. Pellentesque non congue mi.
+                           Morbi volutpat sodales ante sollicitudin dictum. Nullam lorem lacus,
+                           tincidunt non mollis eu, condimentum rutrum risus. Praesent iaculis
+                           ipsum mauris, ac porttitor dui sagittis ut. Vestibulum ante ipsum primis
+                           in faucibus orci luctus et ultrices posuere cubilia Curae; Nam maximus
+                           massa a nisi placerat cursus. Nunc quam mi, vulputate a suscipit quis,
+                           iaculis a lectus.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7 col-xs-7">
+                        <br>
+                        <ul id="profesiones">
+                            <li>Lista con nombres de profesiones.</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="col-sm-5 col-xs-5">
+                        <br>
+                        <img alt="imagen_tipo_familia" src="../IMG/img.jpg">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contenedor Centres -->
+    <div id="centres" class="container-fluid bg-1">
+        <div class="container-fluid bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2> A quins centres hi puc anar? </h2>
+                        <hr>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                           Phasellus eget imperdiet turpis. Pellentesque non congue mi.
+                           Morbi volutpat sodales ante sollicitudin dictum. Nullam lorem lacus,
+                           tincidunt non mollis eu, condimentum rutrum risus. Praesent iaculis
+                           ipsum mauris, ac porttitor dui sagittis ut. Vestibulum ante ipsum primis
+                           in faucibus orci luctus et ultrices posuere cubilia Curae; Nam maximus
+                           massa a nisi placerat cursus. Nunc quam mi, vulputate a suscipit quis,
+                           iaculis a lectus.
+                        </p>
+                    </div>
+                </div>
+                <!--  CAMPO PROVISIONAL
+                <div class="row">
+                    <div class="col-sm-7 col-xs-7">
+                        <br>
+                        <ul id="profesiones">
+                            <li>Lista con nombres de profesiones.</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="col-sm-5 col-xs-5">
+                        <br>
+                        <img alt="imagen_tipo_familia" src="../IMG/img.jpg">
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+</html>

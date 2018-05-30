@@ -21,42 +21,34 @@ $(document).ready(function(){
      success:llegadaCurso,
      //error:problemas
    });
-   //alert(id_curs);
 });
 
-function llegadaCurso(curso){
+function llegadaCurso(cursos){
+   var curso = cursos[0];
     $("#nomEstudy").html(curso.nom);
     $("#nomFamily").html(curso.nomFamilia);
     $("#nomFamily2").html("Familia: " +curso.nomFamilia);
-    var tipoEstudi = curso.id_estudis;
-    if(tipoEstudi === "CFGM" || tipoEstudi === "CFGS"){
-        $("#tipoEstudi").html("Ensenyament: Formacio professional");
+    $("#tipoEstudi").html("Ensenyament: "+curso.id_estudis);
+    var titols = curso.sortida_laboral.split(',');
+    var titolsDesglosats = '<ul id="llista_titols">';
+    for(var i=0; i<titols.length;i++){
+      titolsDesglosats+='<li class="titol">'+titols[i]+'</li>';
     }
-    if(tipoEstudi === "BATX"){
-        $("#tipoEstudi").html("Ensenyament: Batxillerat");
-    }
-    else{
-        $("#tipoEstudi").html("Ensenyament: Estudis universitaris");
-    }
+    titolsDesglosats+='</ul>';
+    $("#titol").html("Titulació/ons: "+titolsDesglosats);
+    $("#descripcio_llarga").html(curso.descripcio_llarga);
 
-    if(tipoEstudi === "CFGM"){
-        $("#titol").html("Titulació: Tècnic/a");
+    var assignatures = curso.contingut.split(',');
+    var assignaturesDesglosades = '<ul id="llista_assignatures">';
+    for(var i=0; i<titols.length;i++){
+      assignaturesDesglosades+='<li class="titol">'+assignatures[i]+'</li>';
     }
-    if(tipoEstudi === "CFGS"){
-        $("#titol").html("Titulació: Tècnic/a superior");
-    }
-    if(tipoEstudi === "BATX"){
-        $("#titol").html("Titulació: Batxillerat");
-    }
-    else{
-        $("#titol").html("Titulació: Llicenciat");
-    }
-
-    $("#descipcion").html(curso.descripcio_llarga);
-
-    $("#duracion").html("<p>La duració del curs serà de: " + curso.duracio + ". Una cinquena part \n\
+    assignaturesDesglosades+='</ul>';
+    $("#assignatures").html("Assignatures: "+assignaturesDesglosades);
+    /*
+    $("#duracion").html("<p>La duració del curs serà de: " + curso.duracio + "h. Una cinquena part \n\
     d'aquestes hores, es faran en centre de treball com a pràctiques.</p><p>El cost total del curs es de\n\
-     " + curso.preu + "€ aproximadament.");
+     " + curso.preu + "€ aproximadament.");*/
 }
 /*
 function separarAsignaturas(cursos){

@@ -3,15 +3,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../JS/funciones.js"></script>
-        <script src="js/jquery.js"></script>
+        <script type="text/javascript" src="../JS/funcionesCurso.js"></script>
+        <script src="../JS/jquery.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="../CSS/style.css">
         <title>Orientador Educatiu</title>
     </head>
     <body>
-      <script type="text/javascript" src="../JS/jquery-1.10.2.min.js"></script>
-
       <!-- Menu principal -->
       <nav id="prueba" class="navbar navbar-default">
         <div class="container">
@@ -41,38 +39,33 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 id="nomEstudy"> Nombre Curso </h1>
-                        <h2 id="nomFamily"> Nombre familia </h2>
+                        <h1 id="nomEstudy"> Nom Curs </h1>
                         <hr>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-xs-6">
                         <br>
-                        <p id="tipoEstudi">Ensenyament: Formacio professional </p>
-                        <p id="titol">Tecnic superior</p>
-                        <p id="nomFamily2">Familia: nombre familia</p>
+                        <p id="tipoEstudi"> </p>
+                        <p id="titol"> </p>
+                        <p id="nomFamily2"> </p>
+                        <span id="icono_duracion"></span>
+                        <span id="icono_coste"></span>
                     </div>
                     <div class="col-sm-6 col-xs-6">
                         <br>
                         <img alt="imagen_tipo_familia" src="../IMG/img.jpg">
                         <br>
                     </div>
+                    <div id="iconos"> </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <h2>Qué es fa en aquest curs?</h2>
                         <hr>
                         <br>
-                        <p id="descripcion">Aquests estudis capaciten per organitzar,
-                            gestionar i controlar les operacions del transport de mercaderies
-                            i de viatgers en l'àmbit nacional i internacional, i per planificar
-                            i gestionar les activitats logístiques d'una empresa, d'acord amb la
-                            normativa vigent i els objectius establerts per la direcció de l'empresa,
-                            en el marc de la qualitat, seguretat i respecte pel medi ambient.</p>
-                        <p id="duracion">La duració del curs serà de: " + cursos.duracio + ". Una cinquena part \n\
-                            d'aquestes hores, es faran en centre de treball com a pràctiques.</p><p>El cost total del curs es de\n\
-                            " + cursos.preu + "€ aproximadament.</p>
+                        <p id="descripcio_llarga"></p>
+                        <p id="duracio"></p>
                     </div>
                 </div>
             </div>
@@ -107,9 +100,7 @@
                     </div>
                     <div class="col-sm-7 col-xs-7">
                         <br>
-                        <ul id="asignaturas">
-                            <li>Lista con nombres de asignaturas del curso.</li>
-                        </ul>
+                        <div id="assignatures"> </div>
                         <br>
                     </div>
                 </div>

@@ -101,3 +101,8 @@ div.cuestionario .jumbotron label{
 .cursoClickable:hover{
   background-color: #1abc9c;
 }
+
+/* REGLAS CURSO.HTML ------------------------------------------------------*/
+.titol{
+  text-transform: capitalize;
+}

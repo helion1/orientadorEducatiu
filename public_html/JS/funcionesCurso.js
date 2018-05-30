@@ -31,7 +31,7 @@ $(document).ready(function(){
      //error:problemas
    });
 
-   $('#centros_mapa a').click(function(event){
+   $('.mapa').click(function(event){
      event.preventDefault();
 
      var codi_centre = $(this).attr('id');
@@ -53,7 +53,7 @@ $(document).ready(function(){
 });
 // FUERA DEL READY --------------------------------------------------------------------
 function initMap(x, y) {
-    var centro = new google.maps.LatLng(/*var cooredenadaX*/x, /*var coordenadaY*/ y);
+    var centro = new google.maps.LatLng(/*var cooredenadaX*/y, /*var coordenadaY*/ x);
 
     var map = new google.maps.Map(document.getElementById('map'), {
         center: centro,
@@ -104,7 +104,7 @@ function llegadaCurso(cursos){
 function llegadaCentros(centros){
   var centrosHtml = '<ul id="centros_mapa">';
   for(var i=0; i<centros.length;i++){
-    centrosHtml+='<a id="'+centros[i].codi_centre+'><li">'+centros[i].nom+' ('+centros[i].municipi+')</li></a>';
+    centrosHtml+='<a href="#" class="mapa" id="'+centros[i].codi_centre+'"><li>'+centros[i].nom+' ('+centros[i].municipi+')</li></a>';
   }
   centrosHtml+='</ul>';
   $('#lista_centros').html(centrosHtml);
@@ -120,6 +120,33 @@ function llegadaCentros(centros){
 
 }
 
-function llegadaCoordenadas(centro){
-
+function llegadaCoordenadas(datos){
+    var centro = datos[0];
+    initMap(centro.Coordenada_X, centro.Coordenada_Y);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -45,10 +45,10 @@ function llegadaCurso(cursos){
     }
     assignaturesDesglosades+='</ul>';
     $("#assignatures").html("Assignatures: "+assignaturesDesglosades);
-    /*
-    $("#duracion").html("<p>La duració del curs serà de: " + curso.duracio + "h. Una cinquena part \n\
-    d'aquestes hores, es faran en centre de treball com a pràctiques.</p><p>El cost total del curs es de\n\
-     " + curso.preu + "€ aproximadament.");*/
+
+    $("#icono_duracion").html(curso.duracio+"h");
+    $("#icono_coste").html(curso.preu+"€");
+
 }
 /*
 function separarAsignaturas(cursos){

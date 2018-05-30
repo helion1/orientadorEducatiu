@@ -28,14 +28,16 @@ function llegadaCurso(cursos){
     $("#nomEstudy").html(curso.nom);
     $("#nomFamily").html(curso.nomFamilia);
     $("#nomFamily2").html("<strong>Familia: </strong>" +curso.nomFamilia);
-    $("#tipoEstudi").html("<strong>Ensenyament: </strong>"+curso.id_estudis);
+    $("#tipoEstudi").html("<strong>Tipus de curs: </strong>"+curso.id_estudis);
+
     var titols = curso.sortida_laboral.split(',');
     var titolsDesglosats = '<ul id="llista_titols">';
     for(var i=0; i<titols.length;i++){
       titolsDesglosats+='<li class="titol">'+titols[i]+'</li>';
     }
     titolsDesglosats+='</ul>';
-    $("#profesiones").html("<strong>Titulació/ons: </strong>"+titolsDesglosats);
+
+    $("#profesiones").html("<strong>Sortides laborals: </strong>"+titolsDesglosats);
     $("#descripcio_llarga").html(curso.descripcio_llarga);
 
     var assignatures = curso.contingut.split(',');
@@ -50,19 +52,3 @@ function llegadaCurso(cursos){
     $("#icono_coste").html(curso.preu+"€");
 
 }
-/*
-function separarAsignaturas(cursos){
-    var asignaturas = cursos.contingut;
-    var asignatura = asignaturas.split(",");
-    for(var i=0; i < asignatura.length; i++){
-        $("#asignaturas").html("<li>"+asignatura[i]+"</li>");
-    }
-}
-
-function separarProfesiones(cursos){
-    var profesiones = cursos.sortida_laboral;
-    var profesio = profesiones.split(",");
-    for(var i=0; i < profesio.length; i++){
-        $("#profesiones").html("<li>"+profesio[i]+"</li>");
-    }
-}*/

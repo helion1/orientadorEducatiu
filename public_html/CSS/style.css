@@ -108,8 +108,13 @@ div.cuestionario .jumbotron label{
 }
 
 #icono_coste, #icono_duracion{
+  font-size: 1.5em;
   border-radius: 50px;
   background-color: blue;
   text-shadow: 3px 3px 3px black;
-  padding: 10px;
+  padding: 20px;
+  margin: 25px;
+}
+ul li{
+  font-size: 0.8em;
 }

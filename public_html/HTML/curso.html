@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../JS/funcionesCurso.js"></script>
-        <script src="../JS/jquery.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../CSS/style.css">
-        <title>Orientador Educatiu</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../CSS/style.css">
+      <script src="../JS/jquery.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWJRtTGQ0d-n5w3obKW8s93sAb-QG6WK8&callback=initMap"></script>
+      <script type="text/javascript" src="../JS/googleMaps.js"></script>
+      <script type="text/javascript" src="../JS/funcionesCurso.js"></script>
+      <title>Orientador Educatiu</title>
     </head>
     <body>
       <!-- Menu principal -->
@@ -47,27 +49,25 @@
                     <div class="col-sm-6 col-xs-6">
                         <p id="tipoEstudi"> </p>
                         <p id="nomFamily2"> </p>
-                    </div>
-                    <div class="col-sm-6 col-xs-6">
-                        <br>
-                        <img alt="imagen_tipo_familia" src="../IMG/img.jpg">
-                        <br>
-                    </div>
-                </div>
-                <div id="iconos">
-                  <span id="icono_duracion"></span>
-                  <span id="icono_coste"></span>
-                </div>
-                <br><br>
-                <div class="row">
-                    <div class="col-sm-12">
+                        <br><br>
                         <h2>Qué es fa en aquest curs?</h2>
                         <hr>
                         <br>
                         <p id="descripcio_llarga"></p>
                         <p id="duracio"></p>
                     </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <br>
+                        <img id="imatge_familia" alt="imagen_tipo_familia">
+                        <br>
+                        <div id="iconos">
+                          <span id="icono_duracion"></span>
+                          <span id="icono_coste"></span>
+                        </div>
+                    </div>
                 </div>
+
+                <br><br>
             </div>
         </div>
     </div>
@@ -82,14 +82,7 @@
                         <h2> Quines assignatures té? </h2>
                         <hr>
                         <br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                           Phasellus eget imperdiet turpis. Pellentesque non congue mi.
-                           Morbi volutpat sodales ante sollicitudin dictum. Nullam lorem lacus,
-                           tincidunt non mollis eu, condimentum rutrum risus. Praesent iaculis
-                           ipsum mauris, ac porttitor dui sagittis ut. Vestibulum ante ipsum primis
-                           in faucibus orci luctus et ultrices posuere cubilia Curae; Nam maximus
-                           massa a nisi placerat cursus. Nunc quam mi, vulputate a suscipit quis,
-                           iaculis a lectus.
+                        <p> + cursos +
                         </p>
                     </div>
                 </div>
@@ -110,7 +103,7 @@
 
 
     <!-- Contenedor Salida Laboral -->
-    <div id="sortidaLaboral" class="container-fluid bg-11">
+    <div id="sortidaLaboral" class="container-fluid bg-1">
         <div class="container-fluid bg-2">
             <div class="container">
                 <div class="row">
@@ -145,32 +138,14 @@
                         <h2> A quins centres hi puc anar? </h2>
                         <hr>
                         <br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                           Phasellus eget imperdiet turpis. Pellentesque non congue mi.
-                           Morbi volutpat sodales ante sollicitudin dictum. Nullam lorem lacus,
-                           tincidunt non mollis eu, condimentum rutrum risus. Praesent iaculis
-                           ipsum mauris, ac porttitor dui sagittis ut. Vestibulum ante ipsum primis
-                           in faucibus orci luctus et ultrices posuere cubilia Curae; Nam maximus
-                           massa a nisi placerat cursus. Nunc quam mi, vulputate a suscipit quis,
-                           iaculis a lectus.
-                        </p>
                     </div>
                 </div>
-                <!--  CAMPO PROVISIONAL
-                <div class="row">
-                    <div class="col-sm-7 col-xs-7">
-                        <br>
-                        <ul id="profesiones">
-                            <li>Lista con nombres de profesiones.</li>
-                        </ul>
-                        <br>
-                    </div>
-                    <div class="col-sm-5 col-xs-5">
-                        <br>
-                        <img alt="imagen_tipo_familia" src="../IMG/img.jpg">
-                    </div>
+                <div class="col-sm-6">
+                    <div id="lista_centros"></div>
                 </div>
-                -->
+                <div class="col-sm-6">
+                    <div style="width:500px;height:500px; border-radius: 30px;" id="map"></div>
+                </div>
             </div>
         </div>
     </div>

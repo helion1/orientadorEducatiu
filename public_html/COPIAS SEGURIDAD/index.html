@@ -14,7 +14,7 @@
   	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
   	<script type="text/javascript" src="../JS/bsn.AutoSuggest_c_2.0.js"></script>
     <script src="../JS/jquery.js"></script>
-    <script src="../JS/funciones.js"></script>
+    <!--<script src="../JS/funciones.js"></script>-->
     <link rel="stylesheet" href="../CSS/autosuggest_inquisitor.css" type="text/css" media="screen" charset="utf-8" />
   </head>
 <body>
@@ -41,13 +41,15 @@
 <!-- Contenedor Orientacion -->
 <div id="orientacio" class="container-fluid text-center">
   <div class="container-fluid bg-2 text-center">
-      <h1 class="margin">Ja saps qu&eacute; estudiar?</h1>
+      <h2 class="margin">Ja saps qu&eacute; estudiar?</h2>
       <div class="row">
         <div class="col-sm-6">
             <div class="col-md-1"></div>
             <div id="izquierda" class="col-md-10">
+                <br>
                 <h3>Encara no...</h3>
                 <hr>
+                <br>
                 <p>Doncs utilitza el nostre formulari personal!!</p>
                 <p>Aquest t'indicar&agrave; el curs que millor s'adapti als teus gustos i aptituts!!</p>
                 <br>
@@ -58,18 +60,20 @@
         <div class="col-sm-6">
             <div class="col-md-1"></div>
             <div id="derecha" class="col-md-10">
+                <br>
                 <h3>S&iacute;!! Ho tinc clar!!</h3>
                 <hr>
+                <br>
                 <p>Utilitza el buscador per trobar el teu curs!!</p>
                 <p>Recorda: pots buscar el teu curs pel seu nom o per la professi&oacute;.</p>
                 <br>
                 <!--BUSCADOR -->
                 <div class="ui-widget">
-                    <form method="get" action="">
-                        <input style="width: 200px" type="text" id="testinput" value="" class="inputBuscador" />
-                        <input id="enviarCurso" class="btn btn-info" type="submit" value="Seleccionar" />
-                    </form>
-                </div>
+      						<form method="get" action="">
+      							<input style="width: 200px" type="text" id="testinput" value="" class="inputBuscador" />
+      							<input id="enviarCurso" class="btn btn-info" type="submit" value="Seleccionar" />
+      						</form>
+      					</div>
             </div>
         </div>
       </div>

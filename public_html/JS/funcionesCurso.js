@@ -21,7 +21,55 @@ $(document).ready(function(){
      success:llegadaCurso,
      //error:problemas
    });
+
+   $.ajax({
+     type: "POST",
+     dataType: "json",
+     data: {id_curs : id_curs},
+     url:"../PHP/centrosCurso.php",
+     success:llegadaCentros,
+     //error:problemas
+   });
+
+   $('#centros_mapa a').click(function(event){
+     event.preventDefault();
+
+     var codi_centre = $(this).attr('id');
+     alert(codi_centre);
+
+     $.ajax({
+       type: "POST",
+       dataType: "json",
+       data: {codi_centre : codi_centre},
+       url:"../PHP/coordenadasCentro.php",
+       success:llegadaCoordenadas,
+       //error:problemas
+     });
+
+   })
+
+
+
 });
+// FUERA DEL READY --------------------------------------------------------------------
+function initMap(x, y) {
+    var centro = new google.maps.LatLng(/*var cooredenadaX*/x, /*var coordenadaY*/ y);
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: centro,
+        zoom: 16
+    });
+
+    var coordInfoWindow = new google.maps.InfoWindow();
+    coordInfoWindow.setContent(createInfoWindowContent(centro, map.getZoom()));
+    coordInfoWindow.setPosition(centro);
+    coordInfoWindow.open(map);
+
+    map.addListener('zoom_changed', function() {
+        coordInfoWindow.setContent(createInfoWindowContent(centro, map.getZoom()));
+        coordInfoWindow.open(map);
+    });
+}
 
 function llegadaCurso(cursos){
    var curso = cursos[0];
@@ -29,6 +77,7 @@ function llegadaCurso(cursos){
     $("#nomFamily").html(curso.nomFamilia);
     $("#nomFamily2").html("<strong>Familia: </strong>" +curso.nomFamilia);
     $("#tipoEstudi").html("<strong>Tipus de curs: </strong>"+curso.id_estudis);
+    $("#imatge_familia").attr('src', '../IMG/'+curso.imatge_familia);
 
     var titols = curso.sortida_laboral.split(',');
     var titolsDesglosats = '<ul id="llista_titols">';
@@ -50,5 +99,27 @@ function llegadaCurso(cursos){
 
     $("#icono_duracion").html(curso.duracio+"h");
     $("#icono_coste").html(curso.preu+"€");
+}
+    //MAPA ----
+function llegadaCentros(centros){
+  var centrosHtml = '<ul id="centros_mapa">';
+  for(var i=0; i<centros.length;i++){
+    centrosHtml+='<a id="'+centros[i].codi_centre+'><li">'+centros[i].nom+' ('+centros[i].municipi+')</li></a>';
+  }
+  centrosHtml+='</ul>';
+  $('#lista_centros').html(centrosHtml);
+
+  $.ajax({
+    type: "POST",
+    dataType: "json",
+    data: {codi_centre : centros[0].codi_centre},
+    url:"../PHP/coordenadasCentro.php",
+    success:llegadaCoordenadas,
+    //error:problemas
+    });
+
+}
+
+function llegadaCoordenadas(centro){
 
 }

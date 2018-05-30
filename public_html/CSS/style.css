@@ -10,7 +10,7 @@ body {
   }
 
    #orientacio{
-      background-image: url("../IMG/estudiar.jpg");
+      background-image: url("../IMG/estudio.jpg");
       color: #ffffff;
       height: 85%;
   }
@@ -19,22 +19,46 @@ body {
   .margin {margin-bottom: 45px;}
   .bg-1 {
       background-color: #1abc9c; /* Green */
-      color: #ffffff;
+      color: #000000;
       height: 100%;
   }
   .bg-11 {
       background-color: #474e5d; /* Green */
-      color: #ffffff;
+      color: #000000;
       height: 100%;
   }
   .bg-2 {
       /*background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
+      color: #000000;
       height: 100%;
+      text-transform: uppercase;
+      font-weight: bold;
   }
+
+  #izquierda, #derecha {
+      background-color: rgba(255,255,255,0.6);
+      border: white;
+      border-radius: 25px;
+      padding: 50px;
+  }
+
+  #izquierda button, #derecha input[type="submit"]{
+      background-color: #0099ff;
+      border: #0099ff;
+  }
+
+  #orientacio h1 {
+      background-color: white;
+  }
+
+  .bg-2 h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+
   .bg-3 {
       background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
+      color: #000000;
       height: 10%;
   }
   .container-fluid {
@@ -107,6 +131,10 @@ div.cuestionario .jumbotron label{
   text-transform: capitalize;
 }
 
+#nomEstudy{
+  font-size:3em;
+}
+
 #icono_coste, #icono_duracion{
   font-size: 1.5em;
   border-radius: 50px;
@@ -115,6 +143,16 @@ div.cuestionario .jumbotron label{
   padding: 20px;
   margin: 25px;
 }
+#iconos{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
 ul li{
   font-size: 0.8em;
+}
+
+#imatge_familia{
+  max-width: 500px;
 }

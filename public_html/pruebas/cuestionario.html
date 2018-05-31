@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cuestionario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="StyleSheet" href="../CSS/style.css" type="text/css">
+        <script type="text/javascript" src="../JS/jquery.js"></script>
+        <script type="text/javascript" src="../JS/funcionesCuestionario.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav  id="prueba" class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand text">ORIENTADOR EDUCATIU</a>
+                </div>
+            </div>
+        </nav>
+        <div id="orientacio" class="container-fluid text">
+        <div class="container-fluid bg-2 text">    
+        
+            <h1 id="PreTitulo" class="text-center"><span class="titulo">Contesta aquestes 3 preguntes:</span></h1>
+        <br>
+        <h1 id="PostTitulo" class="text-center"><span class="titulo">¡Aquests son els teus cursos!</span></h1>
+        <div class="container" id="cursos"></div>
+
+        <div class="container cuestionario" id="principal">
+          <h3>¿Quins estudis tens després de la ESO?</h3>
+          <form class="jumbotron" id="formEstudios">
+              <input type="radio" name="estudios" value="nada" id="nada" checked> <label for="nada">Res mès</label><br>
+            <input type="radio" class="ciclo" name="estudios" value="CFGM" id="CFGM" > <label for="CFGM">Grau Mitjà</label>
+            <br><input type="radio" class="ciclo" name="estudios" value="CFGS" id="CFGS"> <label for="CFGS">Grau Superior</label>
+            <br><input type="radio" name="estudios" value="BATX" id="BATX"> <label for="BATX">Batxillerat</label><br>
+            <input type="radio" name="estudios" value="GRAU" id="GRAU"> <label for="GRAU">Carrera Universitària</label><br>
+            <input class="btn btn-info botonEstudios" type="button" value="¡Següent!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1">
+          <h3> ¿Qué t'agrada mès?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1" value="cuestionario1-1" id="questionario1-1" checked> <label for="questionario1-1">La <strong>cuina</strong>, estar <strong>cara al públic</strong> o <strong>viatjar</strong></label> <br>
+            <input type="radio" name="pregunta1" value="cuestionario1-2" id="questionario1-2"> <label for="questionario1-2"> La <strong>natura</strong> o els <strong>animals</strong></label> <br>
+            <input type="radio" name="pregunta1" value="cuestionario1-3" id="questionario1-3"> <label for="questionario1-3"> La <strong>tecnologia</strong>(Aparells electrónics, laboratoris,etc) o els <strong>vehícles</strong>(Cotxes, motos ,etc)</label><br>
+            <input type="radio" name="pregunta1" value="cuestionario1-4" id="questionario1-4"> <label for="questionario1-4"> L'<strong>esport</strong> o la <strong>imatge personal</strong>(aparença, moda, roba, etc)</label><br>
+            <input type="radio" name="pregunta1" value="cuestionario1-5" id="questionario1-5"> <label for="questionario1-5"> <strong>Constrüir/montar</strong> o <strong>reparar</strong> </label><br>
+            <input type="radio" name="pregunta1" value="cuestionario1-6" id="questionario1-6"> <label for="questionario1-6"> <strong>Protegir/cuidar</strong> o <strong>ensenyar</strong> als altres</label><br>
+            <input type="radio" name="pregunta1" value="cuestionario1-7" id="questionario1-7"> <label for="questionario1-7"> L'<strong>art </strong>(Dibuix, música, fotografia ,etc) o l'<strong>administració/gestió</strong></label><br><br>
+            <input class="btn btn-info botonPregunta1" type="button" value="¡Següent!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1-1">
+          <h3> I ara... ¿Que prefereixes?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1-1" value="1.1.1" id="p1.1.1" checked> <label for="p1.1.1"> Atendre a <strong>clients</strong></label><br>
+            <input type="radio" name="pregunta1-1" value="1.1.2" id="p1.1.2"> <label for="p1.1.2"> La <strong>venta</strong> enfocada a <strong>empreses</strong></label><br>
+            <input type="radio" name="pregunta1-1" value="1.1.3" id="p1.1.3"> <label for="p1.1.3"> <strong>Viatjar</strong></label><br>
+            <input type="radio" name="pregunta1-1" value="1.1.4" id="p1.1.4"> <label for="p1.1.4"> La <strong>cuina</strong></label><br>
+            <input type="radio" name="pregunta1-1" value="1.1.5" id="p1.1.5"> <label for="p1.1.5"> La <strong>elaboració industrial</strong> de materies primes dels <strong>aliments</strong></label><br><br>
+            <input class="btn btn-info botonTerminar" type="button" value="¡Acabar!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1-2">
+          <h3> I ara... ¿Que prefereixes?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1-2" value="1.2.1" id="p1.2.1" checked> <label for="p1.2.1"> La <strong>Pesca</strong> i/o el món submarí</label><br>
+            <input type="radio" name="pregunta1-2" value="1.2.2" id="p1.2.2"> <label for="p1.2.2"> La <strong>natura</strong>, el <strong>camp</strong> i/o les <strong>plantes</strong></label><br>
+            <input type="radio" name="pregunta1-2" value="1.2.3" id="p1.2.3"> <label for="p1.2.3"> Els <strong>animals</strong></label><br><br>
+            <input class="btn btn-info botonTerminar" type="button" value="¡Acabar!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1-3">
+          <h3> I ara... ¿Que prefereixes?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1-3" value="1.3.1" id="p1.3.1" checked> <label for="p1.3.1"> Els <strong>Aparells electrónics</strong></label><br>
+            <input type="radio" name="pregunta1-3" value="1.3.2" id="p1.3.2"> <label for="p1.3.2"> Els <strong>ordinadors</strong>, i els <strong>videojocs</strong></label><br>
+            <input type="radio" name="pregunta1-3" value="1.3.3" id="p1.3.3"> <label for="p1.3.3"> La <strong>Química</strong> i els <strong>Laboratoris</strong></label><br>
+            <input type="radio" name="pregunta1-3" value="1.3.4" id="p1.3.4"> <label for="p1.3.4"> Els <strong>cotxes</strong> o altres <strong>vehícles</strong></label><br><br>
+            <input class="btn btn-info botonTerminar" type="button" value="¡Acabar!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1-4">
+          <h3> I ara... ¿Que prefereixes?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1-4" value="1.4.1" id="p1.4.1" checked> <label for="p1.4.1"> Fer <strong>esport</strong> al <strong>aire lliure</strong></label><br>
+            <input type="radio" name="pregunta1-4" value="1.4.2" id="p1.4.2"> <label for="p1.4.2"> Fer <strong>esport competitiu</strong> o d'<strong>equips</strong></label><br>
+            <input type="radio" name="pregunta1-4" value="1.4.3" id="p1.4.3"> <label for="p1.4.3"> Cuidar l'<strong>Aparença física</strong></label><br>
+            <input type="radio" name="pregunta1-4" value="1.4.4" id="p1.4.4"> <label for="p1.4.4"> La <strong>Roba</strong> y la <strong>Moda</strong></label><br><br>
+            <input class="btn btn-info botonTerminar" type="button" value="¡Acabar!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1-5">
+          <h3> I ara... ¿Que prefereixes?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1-5" value="1.5.1" id="p1.5.1" checked> <label for="p1.5.1"> <strong>Fabricar </strong> i <strong>inventar</strong> coses</label><br>
+            <input type="radio" name="pregunta1-5" value="1.5.2" id="p1.5.2"> <label for="p1.5.2"> Planificar la <strong>Construcció d'Edificis</strong> o d'<strong>interiors</strong></label><br>
+            <input type="radio" name="pregunta1-5" value="1.5.3" id="p1.5.3"> <label for="p1.5.3"> Planificar <strong>xarxes energétiques o circuits</strong></label><br>
+            <input type="radio" name="pregunta1-5" value="1.5.4" id="p1.5.4"> <label for="p1.5.4"> <strong>Reparar </strong> o <strong>Montar aparells</strong> i <strong>Màquines</strong></label><br><br>
+            <input class="btn btn-info botonTerminar" type="button" value="¡Acabar!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1-6">
+          <h3> I ara... ¿Que prefereixes?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1-6" value="1.6.1" id="p1.6.1" checked> <label for="p1.6.1"> <strong>Fabricar </strong> i <strong>inventar</strong> coses</label><br>
+            <input type="radio" name="pregunta1-6" value="1.6.2" id="p1.6.2"> <label for="p1.6.2"> Planificar la <strong>Construcció d'Edificis</strong> o d'<strong>interiors</strong></label><br>
+            <input class="btn btn-info botonTerminar" type="button" value="¡Acabar!">
+          </form>
+        </div>
+
+        <div class="container cuestionario" id="cuestionario1-7">
+          <h3> I ara... ¿Que prefereixes?</h3>
+          <form class="jumbotron">
+            <input type="radio" name="pregunta1-7" value="1.7.1" id="p1.7.1" checked> <label for="p1.7.1"> <strong>Administració</strong> i <strong>Gestió</strong></label><br>
+            <input type="radio" name="pregunta1-7" value="1.7.2" id="p1.7.2"> <label for="p1.7.2"> Crear <strong>Anuncis</strong> i inventar la millor manera de <strong>vendre un producte</strong></label><br>
+            <input type="radio" name="pregunta1-7" value="1.7.3" id="p1.7.3"> <label for="p1.7.3"> <strong>Disseny digital</strong> i <strong>retoc fotogràfic</strong></label><br>
+            <input type="radio" name="pregunta1-7" value="1.7.4" id="p1.7.4"> <label for="p1.7.4"> Producció de <strong>música</strong> o <strong>vídeo</strong></label><br>
+            <input type="radio" name="pregunta1-7" value="1.7.5" id="p1.7.5"> <label for="p1.7.5"> <strong>Dibuixar</strong> o <strong>Crear</strong> la part artística d'<strong>animacions</strong> o <strong>videojocs</strong></label><br><br>
+            <input class="btn btn-info botonTerminar" type="button" value="¡Acabar!">
+          </form>
+        </div>
+        </div>
+    </div>
+        <!-- Footer -->
+    <footer class="container-fluid bg-3 text-center">
+        <p>Marianao 2017-2018</p>
+    </footer>
+        
+    </body>
+</html>

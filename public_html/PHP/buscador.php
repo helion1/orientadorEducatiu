@@ -1,85 +1,53 @@
 <?php
 
 header('Content-Type: text/html; charset=utf-8');
-/*
-$host = "192.168.2.208";
-$user = "admin";
-$pw = "marianao";
-$db = "project_x";
-
-$conexion = new mysqli($host, $user, $pw, $db);
-
-#Comprobar la conexión
-if ($conexion->connect_error) {
-    printf("Conexión fallida: %s", $conexion->connect_error);
-    exit();
-}
-*/
 
 $cursos = json_decode( file_get_contents('http://192.168.2.206:50928/projectxserver/rest/curs/buscador/'), true );
 json_encode($cursos);
 
-/*
-#Consulta
-$consulta = $conexion->query("SELECT nom, id_curs, paraules_clau FROM curs");
-$cursos = array();
+$input = trim(strtolower( quitar_tildes(utf8_encode($_GET['input']) )));
+$len = strlen($input);
 
-while ( $row = mysqli_fetch_assoc($consulta) ) {
+$aResults = array();
 
-  $curso = array(
-      'nombre' =>  utf8_encode($row['nom']),
-      'claves' =>  utf8_encode($row['paraules_clau']),
-      'id'     =>  utf8_encode($row['id_curs'])
-    );
+//SI HA ESCRITO ALGO EL USER, COMPROBAMOS
+if ($len>2) {
+	for ($i=0;$i<count($cursos);$i++) {
+        // QUITAMOS DE LA BBDD ACENTOS, ESPACIOS, COMAS Y APOSTROFES DE LOS NOMBRES DE LOS CURSOS
+        //PARA HACER MENOS METICULOSA LA COMPARACION Y LO DIVIDIMOS EN UN ARRAY
+        $nombresCompuestos = explode(' ', str_replace(',', '',str_replace("d'", "", quitar_tildes($cursos[$i]['nombre']))));
+        $palabraBBDDsClaveCompuestas = explode(',', quitar_tildes($cursos[$i]['claves']));
+        $esta = false;
+        //COMPROBAMOS SI EL USUARIO HA ESCRITO VARIAS PALABRAS, PARA COMPRAR CON UN ARRAY O CON UN STRING
+        if(es_palabra_compuesta($input)){
+          $inputDescompuesto = explode(' ', str_replace(',', '',str_replace("d'", "",$input)));
+        }
+        //COMPARAMOS CON LOS NOMBRES DE LOS CURSOS, PALABRA POR PALABRA
+        foreach ($nombresCompuestos as $palabraBBDD) {
+          if(es_palabra_compuesta($input)){
+            foreach($inputDescompuesto as $palabraInput){
+              if(strtolower(substr($palabraBBDD,0,$len)) == $palabraInput) $esta = true;
+            }
+          }else{
+            if(strtolower(substr($palabraBBDD,0,$len)) == $input) $esta = true;
+            }
+          }
 
-  array_push($cursos, $curso);
-}
-*/
-
-
-	$input = strtolower( quitar_tildes(utf8_encode($_GET['input']) ));
-	$len = strlen($input);
-
-	$aResults = array();
-
-  //SI HA ESCRITO ALGO EL USER, COMPROBAMOS
-	if ($len>1) {
-		for ($i=0;$i<count($cursos);$i++) {
-          // QUITAMOS DE LA BBDD ACENTOS, ESPACIOS, COMAS Y APOSTROFES DE LOS NOMBRES DE LOS CURSOS
-          //PARA HACER MENOS METICULOSA LA COMPARACION Y LO DIVIDIMOS EN UN ARRAY
-          $nombresCompuestos = explode(' ', str_replace(',', '',str_replace("d'", "", quitar_tildes($cursos[$i]['nombre']))));
-          $palabraBBDDsClaveCompuestas = explode(',', quitar_tildes($cursos[$i]['claves']));
-          $esta = false;
+        //COMPARAMOS CON LOS NOMBRES DE LAS PALABRAS CLAVE, PALABRA POR PALABRA
+        foreach ($palabraBBDDsClaveCompuestas as $palabraClaveBBDD) {
           //COMPROBAMOS SI EL USUARIO HA ESCRITO VARIAS PALABRAS, PARA COMPRAR CON UN ARRAY O CON UN STRING
           if(es_palabra_compuesta($input)){
-            $inputDescompuesto = explode(' ', str_replace(',', '',str_replace("d'", "",$input)));
-          }
-          //COMPARAMOS CON LOS NOMBRES DE LOS CURSOS, PALABRA POR PALABRA
-          foreach ($nombresCompuestos as $palabraBBDD) {
-            if(es_palabra_compuesta($input)){
-              foreach($inputDescompuesto as $palabraInput){
-                if(strtolower(substr($palabraBBDD,0,$len)) == $palabraInput) $esta = true;
-              }
-            }else{
-              if(strtolower(substr($palabraBBDD,0,$len)) == $input) $esta = true;
-              }
+            foreach($inputDescompuesto as $palabraInput){
+              if(strtolower(substr($palabraClaveBBDD,0,$len)) == $palabraInput)  $esta = true;
             }
-
-          //COMPARAMOS CON LOS NOMBRES DE LAS PALABRAS CLAVE, PALABRA POR PALABRA
-          foreach ($palabraBBDDsClaveCompuestas as $palabraClaveBBDD) {
-            //COMPROBAMOS SI EL USUARIO HA ESCRITO VARIAS PALABRAS, PARA COMPRAR CON UN ARRAY O CON UN STRING
-            if(es_palabra_compuesta($input)){
-              foreach($inputDescompuesto as $palabraInput){
-                if(strtolower(substr($palabraClaveBBDD,0,$len)) == $palabraInput)  $esta = true;
-              }
-            }else {
-              if(strtolower(substr($palabraClaveBBDD,0,$len)) == $input)  $esta = true;
-            }
+          }else {
+            if(strtolower(substr($palabraClaveBBDD,0,$len)) == $input)  $esta = true;
           }
-          //SI COINCIDE ALGUNA PALABRA CON ALGUN CURSO O PALABRA CLAVE, LO GUARDA PARA MOSTRARLO LUEGO
-          if($esta){
-              $aResults[] = array( "id"=>($cursos[$i]['id']) ,"value" => htmlspecialchars($cursos[$i]['nombre']) );
-          }
+        }
+        //SI COINCIDE ALGUNA PALABRA CON ALGUN CURSO O PALABRA CLAVE, LO GUARDA PARA MOSTRARLO LUEGO
+        if($esta){
+            $aResults[] = array( "id"=>($cursos[$i]['id']) ,"value" => htmlspecialchars($cursos[$i]['nombre']) );
+        }
 		}
 	}
 

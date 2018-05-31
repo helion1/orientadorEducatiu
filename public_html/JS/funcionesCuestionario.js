@@ -18,7 +18,6 @@ $(document).ready(function(){
     /*
     subtitulo =  $('input:radio:checked[value='+respuesta1+']+label').text();
     */
-
   });
 
   $('#formEstudios input:radio').change(function(event){
@@ -144,6 +143,7 @@ function llegadaDatos(datos){
     $('#cursos').append("<article>"+
                             "<h2>Ho sentim :(</h2>"+
                             "<h4 class='red'>Actualment, no tenim cursos que siguin afins als teus gustos.<br>Estem treballant per afegir-ne el mès aviat possible.</h4>"+
+                            '<button class="btn btn-primary" id="tornar" onclick="location=\'index.html\'">Tornar!</button>'+
                         "</article>");
   }
   $('.listaRequisitos li, .red').css('color', 'red');

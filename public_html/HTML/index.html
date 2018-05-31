@@ -22,53 +22,43 @@
 <!-- Menu principal -->
 <nav  id="prueba" class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Inici</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Orientaci&oacute;</a></li>
-      </ul>
-    </div>
+    <ul class="navbar-header nav navbar-nav">
+      <li class="active text-center"><h4>ORIENTADOR EDUCATIU</h4></li>
+    </ul>
   </div>
 </nav>
 
 <!-- Contenedor Orientacion -->
 <div id="orientacio" class="container-fluid text-center">
   <div class="container-fluid bg-2 text-center">
-      <h1 class="margin">Ja saps qu&eacute; estudiar?</h1>
-      <div class="row">
-        <div class="col-sm-6">
-            <div class="col-md-1"></div>
-            <div id="izquierda" class="col-md-10">
-                <h3>Encara no...</h3>
-                <hr>
-                <p>Doncs utilitza el nostre formulari personal!!</p>
-                <p>Aquest t'indicar&agrave; el curs que millor s'adapti als teus gustos i aptituts!!</p>
-                <br>
-                <!-- BOTON PARA IR A CUESTIONARIO -->
-                <button class="btn btn-info" onclick="location='cuestionario.html'">Anar al qüestionari</button>
+      <div class="container">
+          <h1 class="margin"><span>Ja saps qu&eacute; estudiar?</span></h1>
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="col-md-1"></div>
+              <div id="derecha" class="col-md-10">
+                  <h3>S&iacute;!! Ho tinc clar!!</h3>
+                  <br>
+                  <!--BUSCADOR -->
+                  <div class="ui-widget ">
+                      <div class="col-xs-10">
+                          <input type="text" id="testinput" value="" class="inputBuscador form-control" />
+                      </div>
+                      <div class="col-xs-2">
+                          <button id="enviarCurso" class="btn btn-info btn-sm" type="submit" value=""><span class="glyphicon glyphicon-search"></span></button>
+                      </div>
+                      <br>
+                  </div>
+              </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="col-md-1"></div>
-            <div id="derecha" class="col-md-10">
-                <h3>S&iacute;!! Ho tinc clar!!</h3>
-                <hr>
-                <p>Utilitza el buscador per trobar el teu curs!!</p>
-                <p>Recorda: pots buscar el teu curs pel seu nom o per la professi&oacute;.</p>
-                <br>
-                <!--BUSCADOR -->
-                <div class="ui-widget">
-                    <form method="get" action="">
-                        <input style="width: 200px" type="text" id="testinput" value="" class="inputBuscador" />
-                        <input id="enviarCurso" class="btn btn-info" type="submit" value="Seleccionar" />
-                    </form>
+            <br class="visible-xs">
+            <div class="col-sm-6">
+                <div class="col-md-1"></div>
+                <div id="izquierda" class="col-md-10">
+                    <h3>Encara no...</h3>
+                    <br>
+                    <!-- BOTON PARA IR A CUESTIONARIO -->
+                    <button class="btn btn-info" onclick="location='cuestionario.html'">Anar al qüestionari</button>
                 </div>
             </div>
         </div>

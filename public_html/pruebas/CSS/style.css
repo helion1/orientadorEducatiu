@@ -1,0 +1,166 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;   
+  }
+
+   #orientacio{
+      background-image: url("../IMG/estudio.jpg");
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: bold;
+      height: 87%;
+  }
+  
+  @media (max-width: 767px) {
+      #orientacio{
+        height: auto;
+      }
+      
+      nav ul li h4 {
+          top: 50%;
+          transform: translateY(-50%);
+      }
+  }    
+
+  p {font-size: 16px;}
+  
+  .margin {margin-bottom: 45px;}
+  
+  .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #000000;
+      height: 100%;
+  }
+  
+  .bg-2 {
+      /*background-color: #474e5d; /* Dark Blue */
+      color: #000000;
+      height: 100%;
+  }
+
+  #izquierda, #derecha {
+      background-color: rgba(255,255,255,0.6);
+      border: white;
+      border-radius: 25px;
+      padding: 50px;
+  }
+
+  #orientacio h1 span{
+      background-color: white;
+      padding-left: 5px;
+      padding-right: 5px;
+      z-index: 1;
+  }
+
+  .bg-2 h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+
+  .bg-3 {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+      height: 10%;
+  }
+  .container-fluid {
+      padding-top: 55px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 16px;
+      letter-spacing: 5px;
+      color: white;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+
+  .opcion{
+      margin-bottom:  50px;
+  }
+
+  #prueba{
+      position: fixed;
+      height: 8%;
+      top: 0px;
+      width: 100%;
+      z-index: 1;
+      background-color: #2f2f2f;
+  }
+
+  .hueco-mapa{
+      background-color: green;
+      width: 70%;
+      position: absolute;
+      transform: translateX(10%);
+  }
+
+  .mapa{
+      position: relative;
+      width: 100%;
+  }
+  
+
+  /* CSS CUESTIONARIO -------------------------------------------------- */
+
+#subtitulo {
+  background-color: grey;
+  padding: 10px;
+}
+
+.cursoClickable:hover{
+  background-color: #1abc9c;
+}
+
+#preguntas{
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cuestionario{
+    position: relative;
+    transform: translateX(25%);
+    left: -25%;
+ 
+}
+
+/* REGLAS CURSO.HTML ------------------------------------------------------*/
+.titol{
+  text-transform: capitalize;
+}
+
+
+
+#icono_coste, #icono_duracion{
+  font-size: 1.5em;
+  border-radius: 50px;
+  background-color: blue;
+  text-shadow: 3px 3px 3px black;
+  padding: 20px;
+  margin: 25px;
+}
+#iconos{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+ul li{
+  font-size: 0.8em;
+}
+
+#imatge_familia{
+  max-width: 500px;
+}

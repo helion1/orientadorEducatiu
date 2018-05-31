@@ -1,5 +1,6 @@
 var id_curs;
 $(document).ready(function(){
+  //RECOGE LA VARIABLE id_curs DE LA URL
    var variable = 'id_curs';
    var query = window.location.search.substring(1);
    var vars = query.split("&");
@@ -28,9 +29,55 @@ $(document).ready(function(){
      success:llegadaCentros,
      //error:problemas
    });
+ //FUNCION PARA PASARLE COORDENADAS AL MAPA
+ function llegadaCoordenadas(datos){
+     var centro = datos[0];
+     initMap(centro);
+     $('#info_centro').html('<img class="imagenCentro" style="max-width: 500px; border: 2px solid white; border-radius: 20px; box-shadow: 4px 4px 4px black" src="../IMG/'+centro.imatge+'">');
+ }
+
+ function initMap(centro) {
+       var chincheta = new google.maps.LatLng(centro.Coordenada_Y, centro.Coordenada_X);
+         var map = new google.maps.Map(document.getElementById('map'), {
+           center: chincheta,
+           zoom: 18
+         });
+
+         var coordInfoWindow = new google.maps.InfoWindow();
+         coordInfoWindow.setContent([
+           centro.naturalesa,
+           centro.direccio,
+           centro.telefon,
+           centro.municipi+' ('+centro.id_provincia+')',
+           centro.email_web,
+         ].join('<br>'));
+         coordInfoWindow.setPosition(chincheta);
+         coordInfoWindow.open(map);
+
+          map.addListener('zoom_changed', function() {
+           coordInfoWindow.setContent([
+             centro.naturalesa,
+             centro.direccio,
+             centro.telefon,
+             centro.municipi+' ('+centro.id_provincia+')',
+             centro.email_web,
+           ].join('<br>'));
+           coordInfoWindow.open(map);
+         });
+       }
+
+   /*
+   var infoCentreHtml = '<ul id="lista_info_centro" style="list-style:none">';
+
+   infoCentreHtml += '<li><strong>Tipus: </strong>'+centro.naturalesa+'</li>';
+   infoCentreHtml += '<li><strong>Direcció: </strong>'+centro.direccio+'</li>';
+   infoCentreHtml += '<li><strong>Teléfon: </strong>'+centro.telefon+'</li>';
+   infoCentreHtml += '<li><strong>Municipi: </strong>'+centro.municipi+' ('+centro.id_provincia+')</li>';
+   infoCentreHtml += '<li><strong>Correu Electrónic: </strong>'+centro.email_web+'</li>';
+
+   infoCentreHtml += '</ul>'; */
 
 
-});
 // FUERA DEL READY --------------------------------------------------------------------
 function curso_erroneo(){
   alert("No s'ha seleccionat correctament el curs. Torna a intentar-ho!");
@@ -39,24 +86,47 @@ function curso_erroneo(){
 
 
 
-function initMap(x, y) {
-    var centro = new google.maps.LatLng(y, x);
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-        center: centro,
-        zoom: 16
-    });
+//      var TILE_SIZE = 256;
 
-    var coordInfoWindow = new google.maps.InfoWindow();
-    //coordInfoWindow.setContent(createInfoWindowContent(centro, map.getZoom()));
-    coordInfoWindow.setPosition(centro);
-    coordInfoWindow.open(map);
+      /*function createInfoWindowContent(latLng, zoom, centro) {
+        var scale = 1 << zoom;
 
-    map.addListener('zoom_changed', function() {
-        coordInfoWindow.setContent(createInfoWindowContent(centro, map.getZoom()));
-        coordInfoWindow.open(map);
-    });
-}
+        var worldCoordinate = project(latLng);
+
+        var pixelCoordinate = new google.maps.Point(
+            Math.floor(worldCoordinate.x * scale),
+            Math.floor(worldCoordinate.y * scale));
+
+        var tileCoordinate = new google.maps.Point(
+            Math.floor(worldCoordinate.x * scale / TILE_SIZE),
+            Math.floor(worldCoordinate.y * scale / TILE_SIZE));
+
+        return [
+          centro.naturalesa,
+          centro.direccio,
+          centro.telefon,
+          centro.municipi+' ('+centro.id_provincia+')',
+          centro.email_web,
+        ].join('<br>');
+      }*//*
+
+      // The mapping between latitude, longitude and pixels is defined by the web
+      // mercator projection.
+      function project(latLng) {
+        var siny = Math.sin(latLng.lat() * Math.PI / 180);
+
+        // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+        // about a third of a tile past the edge of the world tile.
+        siny = Math.min(Math.max(siny, -0.9999), 0.9999);
+
+        return new google.maps.Point(
+            TILE_SIZE * (0.5 + latLng.lng() / 360),
+            TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI)));
+      }*/
+
+
+
 
 //CARGA DE TODA LA INFORMACION DEL CURSO
 function llegadaCurso(cursos){
@@ -109,11 +179,11 @@ function llegadaCentros(centros){
     success:llegadaCoordenadas,
     });
 
+
+
     $('.mapa').click(function(event){
       event.preventDefault();
-
       var codi_centre = $(this).attr('id');
-
       //LLAMADA AJAX PARA LA INFO DEL CENTRO
       $.ajax({
         type: "POST",
@@ -127,48 +197,5 @@ function llegadaCentros(centros){
     });
 
 
-}
-
-//FUNCION PARA PASARLE COORDENADAS AL MAPA
-function llegadaCoordenadas(datos){
-    var centro = datos[0];
-    initMap(centro.Coordenada_X, centro.Coordenada_Y);
-
-    var infoCentreHtml = '<ul id="lista_info_centro" style="list-style:none">';
-
-    infoCentreHtml += '<li><strong>Tipus: </strong>'+centro.naturalesa+'</li>';
-    infoCentreHtml += '<li><strong>Direcció: </strong>'+centro.direccio+'</li>';
-    infoCentreHtml += '<li><strong>Teléfon: </strong>'+centro.telefon+'</li>';
-    infoCentreHtml += '<li><strong>Municipi: </strong>'+centro.municipi+' ('+centro.id_provincia+')</li>';
-    infoCentreHtml += '<li><strong>Correu Electrónic: </strong>'+centro.email_web+'</li>';
-
-    infoCentreHtml += '</ul>'
-    $('#info_centro').html(infoCentreHtml);
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
+  }
+});

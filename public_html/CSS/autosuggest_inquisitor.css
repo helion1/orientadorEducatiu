@@ -87,6 +87,7 @@ div.autosuggest ul li a
 	position: relative;
 	padding: 0;
 	width: 100%;
+        font-size: 0.8em;
 }
 div.autosuggest ul li a:hover
 {

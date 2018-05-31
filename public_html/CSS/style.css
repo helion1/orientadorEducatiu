@@ -78,11 +78,13 @@ body {
   }
 
   #orientacio h1 span, #orientacio2 h1 span, #orientacio2 h3 span {
-      background-color: white;
+      background-color: rgba(255,255,255,0.6);
       padding-left: 5px;
       padding-right: 5px;
       z-index: 1;
   }
+
+
 
   .bg-2 h3 {
       text-transform: uppercase;
@@ -164,10 +166,15 @@ body {
     background-color: rgba(255,255,255,0.75);
 }
 
+.jumbotron label{
+  font-weight: 300!important;
+}
+
+
 .jumbotron select {
     margin-left: 20px;
     padding-left: 5px;
-}
+  }
 
 /* REGLAS CURSO.HTML ------------------------------------------------------*/
 .titol{

@@ -33,7 +33,7 @@ $(document).ready(function(){
  function llegadaCoordenadas(datos){
      var centro = datos[0];
      initMap(centro);
-     $('#info_centro').html('<img class="imagenCentro" style="max-width: 500px; border: 2px solid white; border-radius: 20px; box-shadow: 4px 4px 4px black" src="../IMG/'+centro.imatge+'">');
+     $('#info_centro').html('<img class="imagenCentro" src="../IMG/'+centro.imatge+'">');
  }
 
  function initMap(centro) {
@@ -146,7 +146,7 @@ function llegadaCurso(cursos){
     }
     titolsDesglosats+='</ul>';
 
-    $("#profesiones").html("<strong>Sortides laborals: </strong>"+titolsDesglosats);
+    $("#profesiones").html("<big><strong>Sortides laborals: </strong></big>"+titolsDesglosats);
     $("#descripcio_llarga").html(curso.descripcio_llarga);
 
     var assignatures = curso.contingut.split(',');
@@ -155,7 +155,7 @@ function llegadaCurso(cursos){
       assignaturesDesglosades+='<li class="titol">'+assignatures[i]+'</li>';
     }
     assignaturesDesglosades+='</ul>';
-    $("#assignatures").html("<strong>Assignatures: </strong>"+assignaturesDesglosades);
+    $("#assignatures").html("<big><strong>Assignatures: </strong></big>"+assignaturesDesglosades);
 
     $("#icono_duracion").html(curso.duracio+"h");
     $("#icono_coste").html(curso.preu+"€");

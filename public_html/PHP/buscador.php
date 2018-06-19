@@ -2,7 +2,7 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
-$cursos = json_decode( file_get_contents('http://192.168.2.206:50928/projectxserver/rest/curs/buscador/'), true );
+$cursos = json_decode( file_get_contents('http://localhost/projectxserver/rest/curs/buscador/'), true );
 json_encode($cursos);
 
 $input = trim(strtolower( quitar_tildes(utf8_encode($_GET['input']) )));
